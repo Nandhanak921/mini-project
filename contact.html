@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      
+    }
+
+    .contact-container {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      margin: 80px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .contact-container h2 {
+      text-align: center;
+      color: #056669;
+      margin-bottom: 20px;
+    }
+
+    .contact-container label {
+      font-weight: bold;
+      color: #333;
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .contact-container textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    .contact-container button {
+      width: 100%;
+      padding: 12px;
+      background: #056669;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-container button:hover {
+      background: #004c4f;
+    }
+  </style>
+</head>
+<body>
+
+<div class="contact-container">
+    <h2>Contact Me</h2>
+    <form onsubmit="return validateForm()">
+      <input type="text" id="name" placeholder="Your Name">
+      <input type="email" id="email" placeholder="Your Email">
+      <textarea id="message" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let message = document.getElementById("message").value.trim();
+
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill out all fields before submitting.");
+        return false;
+      } else {
+        alert("Thank you, " + name + "! Your message has been sent successfully");
+        return true;
+      }
+    }
+  </script>
+
+
+</body>
+</html>
