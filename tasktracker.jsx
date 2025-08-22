@@ -36,7 +36,7 @@ function TaskTracker() {
           padding: "25px",
           borderRadius: "12px",
           boxShadow: "0 6px 20px rgba(0,0,0,0.15)",
-          width: "400px",
+          width: "420px",
           textAlign: "center",
         }}
       >
@@ -79,36 +79,38 @@ function TaskTracker() {
         </div>
 
         {/* Task List */}
-        <ul style={{ listStyle: "none", padding: 0 }}>
+        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
           {tasks.map((t, index) => (
             <li
               key={index}
               style={{
-                background: "#e6f2f2",
+                background: "#dff5f5",
                 margin: "10px 0",
                 padding: "12px",
                 borderRadius: "8px",
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
+                color: "#056669",
+                fontWeight: "500",
               }}
             >
               {t}
               <button
                 onClick={() => deleteTask(index)}
                 style={{
-                  background: "red",
+                  background: "#056669",
                   border: "none",
                   color: "white",
-                  padding: "6px 10px",
+                  padding: "6px 12px",
                   borderRadius: "5px",
                   cursor: "pointer",
                   transition: "0.3s",
                 }}
-                onMouseOver={(e) => (e.target.style.background = "darkred")}
-                onMouseOut={(e) => (e.target.style.background = "red")}
+                onMouseOver={(e) => (e.target.style.background = "#004c4f")}
+                onMouseOut={(e) => (e.target.style.background = "#056669")}
               >
-                Delete
+                ✖
               </button>
             </li>
           ))}
